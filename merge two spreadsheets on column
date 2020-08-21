@@ -1,0 +1,33 @@
+import pandas as pd
+import numpy as np
+import statsmodels.formula.api as sm
+
+dataset = pd.read_excel (r'/Users/jeremiahmcleod/Desktop/Names.xlsx')
+df = pd.DataFrame(dataset)
+#%%
+
+data = pd.read_excel (r'/Users/jeremiahmcleod/Desktop/Master.xlsx')
+df1 = pd.DataFrame(data)
+
+#%%
+merged_fun = df1.merge(df, how='left', on = ['COMPANY'])
+
+#%%
+mega = merged_fun.drop_duplicates()
+print(mega)
+#%%
+df2 = mega
+#%%
+print(df2)
+
+#%%
+results = pd.concat(frames, keys=['COMPANY'])
+#%%
+
+#%%
+switch = print(pd.merge(df, df1, on='COMPANY'))
+#%%
+print(df2['COMPANY'].nunique())
+
+#%%
+df2.to_csv('/Users/jeremiahmcleod/Desktop/Brick.csv')
